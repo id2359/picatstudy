@@ -1,0 +1,26 @@
+import planner.
+final([1,2,3]) => true.
+
+action(State, NewState, Action, Cost) ?=>
+    State = [X,Y,Z],
+    NewState = [Y,X,Z],
+    Action = swap,
+    Cost = 1.
+
+action(State, NewState, Action, Cost) ?=>
+    State = [X,Y,Z],
+    NewState = [Z,Y,X],
+    Action = rev,
+    Cost = 1.
+
+main => go.
+
+go =>
+    Start = [3,1,2],
+    plan(Start,Plan),
+    writeln(Plan).
+
+
+
+
+
